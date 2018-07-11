@@ -216,7 +216,7 @@
   z-index: 4;
 }
 .lightblue_round {
-direction: flex;
+ direction: flex;
   border-radius: 10px;
   background-color: rgb(178, 235, 242);
   position: absolute;
