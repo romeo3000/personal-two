@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <Container className="lightblue_round">
-        <h1>Container </h1>
+        <Container className="main">
           <EventDashboard className=""/>
         </Container>
       </div>
