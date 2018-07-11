@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Menu, Container, Button } from 'semantic-ui-react'
 
+
 export default class NavBar extends Component {
   render() {
     return (

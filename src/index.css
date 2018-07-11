@@ -1,6 +1,8 @@
-body {
-  background-color: rgb(234, 234, 234) !important;
-}
+/* body {
+
+ 
+
+}  */
 
 /*timepicker style*/
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
@@ -70,12 +72,13 @@ body {
 
 .ui.fixed.menu {
   background-color:  #ff1744;
-  height:120px;
+  height:80px;
   
 }
 
 .ui.main.container,
 .main.segment {
+  
   margin-top: 7em;
 }
 
@@ -101,5 +104,136 @@ body {
 .ui.comments .comment .comments {
   padding-bottom: 0 !important;
   padding-left: 2em !important;
+}
+
+
+
+
+.Home_1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1366px;
+  height: 768px;
+  z-index: 33;
+}
+.recentact_circle {
+  border-radius: 50%;
+  background-color: rgb(255, 193, 7);
+  position: absolute;
+  left: 1211px;
+  top: 261px;
+  width: 94px;
+  height: 94px;
+  z-index: 32;
+}
+.Ellipse_3 {
+  border-radius: 50%;
+  background-color: rgb(241, 67, 136);
+  position: absolute;
+  left: 53px;
+  top: 247px;
+  width: 108px;
+  height: 108px;
+  z-index: 31;
+}
+/* .Layer_5 {
+  background-image: url("./assets/Layer_5.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 0px;
+  height: 0px;
+  z-index: 24;
+} */
+.Ellipse_2 {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 40px;
+  top: 235px;
+  width: 134px;
+  height: 134px;
+  z-index: 23;
+}
+
+.Layer_2 {
+  background-image: url("./assets/Layer_2.png");
+  position: absolute;
+  left: 73px;
+  top: 504px;
+  width: 532px;
+  height: 88px;
+  z-index: 18;
+}
+.Rounded_Rectangle_4 {
+  border-radius: 10px;
+  background-color: rgb(241, 67, 136);
+  position: absolute;
+  left: 73px;
+  top: 283px;
+  width: 532px;
+  height: 393px;
+  z-index: 17;
+}
+.Ellipse_1 {
+  border-radius: 50%;
+  background-color: rgb(29, 233, 182);
+  position: absolute;
+  left: 1195px;
+  top: 245px;
+  width: 125px;
+  height: 127px;
+  z-index: 10;
+}
+.Rounded_Rectangle_1 {
+  border-radius: 10px;
+  background-color: rgb(29, 233, 182);
+  position: absolute;
+  left: 688px;
+  top: 270px;
+  width: 605px;
+  height: 406px;
+  z-index: 9;
+}
+.Rounded_Rectangle_3 {
+  border-radius: 10px;
+  background-color: rgb(41, 121, 255);
+  position: absolute;
+  left: 643px;
+  top: 213px;
+  width: 695px;
+  height: 506px;
+  z-index: 7;
+}
+.Rectangle_1 {
+  background-color: rgb(255, 23, 68);
+  position: absolute;
+  left: 16px;
+  top: 56px;
+  width: 1331px;
+  height: 82px;
+  z-index: 4;
+}
+.lightblue_round {
+direction: flex;
+  border-radius: 10px;
+  background-color: rgb(178, 235, 242);
+  position: absolute;
+  left: 25px;
+  top: 176px;
+  width: 1326px;
+  height: 570px;
+  z-index: 3;
+}
+.Rounded_Rectangle_2 {
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204);
+  position: absolute;
+  left: 25px;
+  top: 176px;
+  width: 1326px;
+  height: 570px;
+  z-index: 2;
 }
 
