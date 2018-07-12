@@ -9,7 +9,7 @@ class EvenListItem extends Component {
             <Segment>
               <Item.Group>
                 <Item>
-                  <Item.Image size="tiny" circular src="https://randomuser.me/api/portraits/women/42.jpg " />
+                  <Item.Image size="tiny" circular src="https://randomuser.me/api/portraits/women/46.jpg " />
                   <Item.Content>
                     <Item.Header as="a">Game Title</Item.Header>
                     <Item.Description>
@@ -22,16 +22,19 @@ class EvenListItem extends Component {
             <Segment>
               <span>
                 <Icon name="clock" /> date |
-                <Icon name="marker" /> time
+                <Icon name="marker" /> time |
+                <Icon name="home " />place
               </span>
             </Segment>
             <Segment secondary>
               <List horizontal>
               <EventListAttendee/>
               <EventListAttendee/>
+              <EventListAttendee/>
               </List>
             </Segment>
             <Segment clearing>
+            <span>Description will go here !</span>
               <Button as="a" color="teal" floated="right" content="View" />
             </Segment>
           </Segment.Group>
