@@ -8,7 +8,7 @@ class EvenList extends Component {
       <div>
         <h1>Game List</h1>
         {events.map((event) => (
-          <EventListItem key = {event.id} event ={event}/>
+          <EventListItem key = {event.id} event={event}/>
 
         ))}
         

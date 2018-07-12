@@ -41,12 +41,12 @@ const eventsDashboard = [
     hostPhotoURL: 'https://randomuser.me/api/portraits/men/23.jpg',
     attendees: [
       {
-        id: 'b',
+        id: 'd',
         name: 'Tom',
         photoURL: 'https://randomuser.me/api/portraits/men/23.jpg'
       },
       {
-        id: 'a',
+        id: 'c',
         name: 'Bob',
         photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
       }
@@ -67,12 +67,12 @@ const eventsDashboard = [
     hostPhotoURL: 'https://randomuser.me/api/portraits/men/25.jpg',
     attendees: [
       {
-        id: 'b',
+        id: 'e',
         name: 'Tom',
         photoURL: 'https://randomuser.me/api/portraits/men/25.jpg'
       },
       {
-        id: 'a',
+        id: 'f',
         name: 'Bob',
         photoURL: 'https://randomuser.me/api/portraits/men/28.jpg'
       }
@@ -89,18 +89,49 @@ const eventsDashboard = [
 
 
  class EventDashboard extends Component {
+   constructor(){
+     super()
+
+     this.state = {
+       events: eventsDashboard,
+       isOpen:false
+
+     }
+      
+     //this.handleFormOPen=this.handleFormOPen.bind(this);
+     //this.handleCancel=this.handleCancel.bind(this);
+
+
+   }
+   
+   handleFormOPen = () => {
+    this.setState({
+      isOPen:true
+
+    })
+  }
+
+  handleCancel = () => {
+    this.setState({
+      isOPen:false
+
+    })
+  }
+
+
   render() {
     return (
       
       <Grid>
          <Grid.Column width={10}>  
-         <EventList events={eventsDashboard}/>
+         <EventList events={this.state.events}/>
          
          </Grid.Column>
          <Grid.Column width={6}>   
          <div className="">
-         <Button positive content="Create Game"/>
-         <EventForm/>
+         <Button onClick = {this.handleFormOPen} positive content="Create Game"/>
+         {this.state.isOpen &&
+         <EventForm handleCancel={this.handleCancel}/>}
          </div> 
           </Grid.Column>
      </Grid> 
