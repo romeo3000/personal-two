@@ -69,8 +69,12 @@
 /* navbar styles */
 
 .ui.menu .item img.logo {
+  size: 100%;
   margin-right: 1.5em;
 }
+
+
+
 
 .ui.fixed.menu {
   background-color:  #ff1744;
@@ -239,3 +243,6 @@
   z-index: 2;
 }
 
+.buttonNav{
+  color:#ffc107; 
+}
