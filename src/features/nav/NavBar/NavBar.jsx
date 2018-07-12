@@ -11,7 +11,7 @@ export default class NavBar extends Component {
          <Container>
            <Menu.Item header>
           
-          <Image class="ui small image" src="../../../assets/logo.png" />
+          <Image class="ui small image" src="../../../assets/logo.png" alt='PlyaGame' />
            </Menu.Item>
            {/* <Menu.Item name="Games" /> */}
            <Menu.Item>
