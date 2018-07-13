@@ -8,7 +8,7 @@ import {Segment, Form, Button  } from 'semantic-ui-react'
        title:'',
        date:'',
        city:'',
-       venuee:'',
+       venue:'',
        hostedBy:'',
 
      }
@@ -16,17 +16,14 @@ import {Segment, Form, Button  } from 'semantic-ui-react'
 
   onFormSubmit =( evt) =>{
 evt.preventDefault();
-console.log(this.state.event)
+this.props.createEvent(this.state.event)
   }
 
 onInputChange = (evt)=>{
   const newEvent =this.state.event;
   newEvent[evt.target.name] = evt.target.value
   this.setState({
-event:{
-
-  title:evt.target.value
-}
+event:newEvent
 
   })
 }
@@ -46,7 +43,7 @@ const {event} = this.state;
                   </Form.Field>
                   <Form.Field>
                     <label>Event Date</label>
-                    <input name='date' onChange={this.onInputChange} value={event.date} placeholder="Event Date" />
+                    <input name='date' onChange={this.onInputChange} value={event.date} type='date' placeholder="Event Date" />
                   </Form.Field>
                   <Form.Field>
                     <label>City</label>
