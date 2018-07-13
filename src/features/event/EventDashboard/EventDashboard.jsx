@@ -51,33 +51,10 @@ const eventsDashboard = [
         photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
       }
     ]
-  },
+  }
 
 
-  {
-    id: '2',
-    title: 'Trip to Punch and Judy Pub',
-    date: '2018-03-28',
-    category: 'drinks',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
-    city: 'London, UK',
-    venue: 'Punch & Judy, Henrietta Street, London, UK',
-    hostedBy: 'Tom',
-    hostPhotoURL: 'https://randomuser.me/api/portraits/men/25.jpg',
-    attendees: [
-      {
-        id: 'e',
-        name: 'Tom',
-        photoURL: 'https://randomuser.me/api/portraits/men/25.jpg'
-      },
-      {
-        id: 'f',
-        name: 'Bob',
-        photoURL: 'https://randomuser.me/api/portraits/men/28.jpg'
-      }
-    ]
-  },
+ 
 
 
 
@@ -89,34 +66,32 @@ const eventsDashboard = [
 
 
  class EventDashboard extends Component {
-   constructor(){
-     super()
-
-     this.state = {
+  
+    
+       state = {
        events: eventsDashboard,
        isOpen:false
 
      }
       
-     //this.handleFormOPen=this.handleFormOPen.bind(this);
+      //this.handleFormOPen=this.handleFormOPen.bind(this);
      //this.handleCancel=this.handleCancel.bind(this);
-
-
-   }
+    //change because arrow function also helps with the same process. 
    
-   handleFormOPen = () => {
+   
+   handleFormOpen = () => {
     this.setState({
-      isOPen:true
+      isOpen:true
 
-    })
-  }
+    });
+  };
 
   handleCancel = () => {
     this.setState({
-      isOPen:false
+      isOpen:false
 
-    })
-  }
+    });
+  };
 
 
   render() {
@@ -128,17 +103,15 @@ const eventsDashboard = [
          
          </Grid.Column>
          <Grid.Column width={6}>   
-         <div className="">
-         <Button onClick = {this.handleFormOPen} positive content="Create Game"/>
+         <Button onClick={this.handleFormOpen} positive content="Create Game"/>
          {this.state.isOpen &&
          <EventForm handleCancel={this.handleCancel}/>}
-         </div> 
           </Grid.Column>
      </Grid> 
    
         
       
-    )
+    );
   }
 }
 export default EventDashboard;

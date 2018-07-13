@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Container, Button, Image} from 'semantic-ui-react'
-import '../../../assets//logo.png'
+import logo from '../../../assets//logo.png'
 
 
 export default class NavBar extends Component {
@@ -11,7 +11,7 @@ export default class NavBar extends Component {
          <Container>
            <Menu.Item header>
           
-          <Image class="ui small image" src="../../../assets/logo.png" alt='PlyaGame' />
+          <Image className="ui mini image"  src={logo}  alt='PlyaGame' />
            </Menu.Item>
            {/* <Menu.Item name="Games" /> */}
            <Menu.Item>

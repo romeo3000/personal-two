@@ -31,7 +31,7 @@ const {handleCancel} = this.props;
                   <Button positive type="submit">
                     Submit
                   </Button>
-                  <Button onClick = { handleCancel } type="button">Cancel</Button>
+                  <Button onClick={handleCancel} type="button">Cancel</Button>
                 </Form>
               </Segment>
     )
