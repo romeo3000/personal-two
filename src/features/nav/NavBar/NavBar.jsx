@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Menu, Container,  Image} from 'semantic-ui-react'
+import { Menu, Container, Button, Image} from 'semantic-ui-react'
 import logo from '../../../assets//logo.png'
+import { NavLink, Link} from 'react-router-dom'
 
 
 export default class NavBar extends Component {
@@ -9,13 +10,14 @@ export default class NavBar extends Component {
      
        <Menu inverted fixed="top">
          <Container>
-           <Menu.Item header>
+           <Menu.Item as={NavLink} to='/' header>
           
           <Image className="ui mini image"  src={logo}  alt='PlyaGame' />
            </Menu.Item>
-           {/* <Menu.Item name="Games" /> */}
+            <Menu.Item as={NavLink}to ='/events' name="Games" /> 
+            <Menu.Item as={NavLink}to ='/people' name="People" /> 
            <Menu.Item>
-             {/* //<Button floated="right" positive inverted content="Create Game" /> */}
+             <Button as={Link} to='/createEvent' floated="right" positive inverted content="Create Game" />
            </Menu.Item>
            <Menu.Item position ="right">
              {/* <Button color='orange' content="Login" />

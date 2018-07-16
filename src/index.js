@@ -12,13 +12,13 @@ let render = () => {
     ReactDOM.render(
         <BrowserRouter>
            <App />
-        </BrowserRouter>
-        , rootEl)
-}
+        </BrowserRouter>, 
+        rootEl);
+};
     if (module.hot){
         module.hot.accept('./app/layout/App', () => {
             setTimeout(render)
-        })
+        });
     }
 
 

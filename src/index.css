@@ -26,20 +26,25 @@
 /*home page styles*/
 
 .masthead {
-  background-image: linear-gradient(
+
+  /* background-image: linear-gradient(
           135deg,
           
           rgb(24, 42, 115) 0%,
           rgb(33, 138, 174) 69%,
           rgb(32, 167, 172) 89%
-  ) !important;
+  ) !important; */
+
+   background-color: rgb(241, 67, 136) !important; 
+  /* background-image: url('./assets/') !important; */
 }
 
 .masthead.segment {
  
-
-  min-height: 700px;
+  display: flex;
+  min-height: 800px;
   padding: 1em 0 !important;
+  /* 700px */
 }
 
 .masthead .ui.menu .ui.button,
