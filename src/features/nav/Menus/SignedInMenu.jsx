@@ -3,7 +3,7 @@ import { Menu,Dropdown,Image } from 'semantic-ui-react'
 const SignedInMenu = () => {
   return (
       <Menu.Item position="right">
-        <Image avatar spaced="right" src='/assets/user.png' />
+        <Image avatar spaced="right" src='../../../assets/user.png' />
         <Dropdown pointing="top left" text="Username">
           <Dropdown.Menu>
             <Dropdown.Item text="Create Event" icon="plus" />

@@ -7,7 +7,12 @@ import SignedInMenu from '../Menus/SignedInMenu'
 
 
 export default class NavBar extends Component {
+state ={
+  authenticated:false
+}
+
   render() {
+    const {authenticated} =this.state;
     return (
      
        <Menu inverted fixed="top">
