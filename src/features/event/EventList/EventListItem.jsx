@@ -4,7 +4,7 @@ import EventListAttendee from './EventListAttendee'
  
 class EvenListItem extends Component {
   render() {
-    const {event, onEventEdit} = this.props;
+    const {event, onEventOpen,deleteEvent} = this.props;
     return (
         
          <Segment.Group >
@@ -15,7 +15,7 @@ class EvenListItem extends Component {
                   <Item.Content>
                     <Item.Header as="a">{event.title}</Item.Header>
                     <Item.Description>
-                      Hosted by <a>{event.hostBy}</a>
+                      Hosted by <a>{event.hostedBy}</a>
                     </Item.Description>
                   </Item.Content>
                 </Item>
@@ -38,8 +38,10 @@ class EvenListItem extends Component {
               </List>
             </Segment>
             <Segment clearing>
-            <span>{event.Description}</span>
-              <Button  onClick ={onEventEdit(event)} as="a" color="teal" floated="right" content="View" />
+            <span>{event.description}</span>
+              <Button  onClick ={deleteEvent(event.id)}
+               as="a" color="red" floated="right" content="Delete" />
+              <Button  onClick ={onEventOpen(event)} as="a" color="teal" floated="right" content="View" />
             </Segment>
           </Segment.Group>
          
