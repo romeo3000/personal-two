@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Container, Button, Image} from 'semantic-ui-react'
+import { Menu, Container,  Image} from 'semantic-ui-react'
 import logo from '../../../assets//logo.png'
 
 
@@ -18,8 +18,8 @@ export default class NavBar extends Component {
              {/* //<Button floated="right" positive inverted content="Create Game" /> */}
            </Menu.Item>
            <Menu.Item position ="right">
-             <Button color='orange' content="Login" />
-             <Button color='yellow'content="Sign Out" style={{marginLeft: '0.5em'}} />
+             {/* <Button color='orange' content="Login" />
+             <Button color='yellow'content="Sign Out" style={{marginLeft: '0.5em'}} /> */}
            </Menu.Item>
          </Container>
        </Menu>

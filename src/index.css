@@ -2,6 +2,7 @@
 
   border-radius: 10px;
   background-color: rgb(178, 235, 242);
+  
  
 
 }  
@@ -35,6 +36,8 @@
 }
 
 .masthead.segment {
+ 
+
   min-height: 700px;
   padding: 1em 0 !important;
 }
@@ -84,12 +87,14 @@
 
 .ui.main.container,
 .main.segment {
+
   
-  margin-top: 7em;
+   margin-top: 7em; 
 }
 
 .ui.center.aligned.segment.attendance-preview {
-  background-color: #f5f5f5;
+  
+    background-color: #f5f5f5;   
 }
 
 .masthead .ui.menu .ui.button,
@@ -175,12 +180,12 @@
 .Rounded_Rectangle_4 {
   border-radius: 10px;
   background-color: rgb(241, 67, 136);
-  position: absolute;
-  left: 73px;
+  position: relative;
+   left: 73px;
   top: 283px;
   width: 532px;
   height: 393px;
-  z-index: 17;
+   z-index: 17;  
 }
 .Ellipse_1 {
   border-radius: 50%;
