@@ -7,13 +7,13 @@ import cuid from "cuid";
 const eventsDashboard = [
   {
     id: "1",
-    title: "Trip to Tower of London",
+    title: "Zelda Breathe of the Wild",
     date: "2018-03-27",
     category: "culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "London, UK",
-    venue: "Tower of London, St Katharine's & Wapping, London",
+    venue: "Tower of Kingston, Jamaica",
     hostedBy: "Fern",
     hostPhotoURL: "https://randomuser.me/api/portraits/men/23.jpg",
     attendees: [
@@ -31,13 +31,13 @@ const eventsDashboard = [
   },
   {
     id: "2",
-    title: "Trip to Punch and Judy Pub",
+    title: " Judy's Game Night Pub",
     date: "2018-03-28",
     category: "drinks",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "London, UK",
-    venue: "Punch & Judy, Henrietta Street, London, UK",
+    venue: "Tom's House ",
     hostedBy: "Tom",
     hostPhotoURL: "https://randomuser.me/api/portraits/men/23.jpg",
     attendees: [
