@@ -3,7 +3,7 @@ import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import EventDashboard from "../../features/event/EventDashboard/EventDashboard";
 import NavBar from "../../features/nav/NavBar/NavBar";
-import EventDetailed from "../../features/event/EventDetailed/EventDetailed";
+import EventDetailed from "../../features/event/EventDetailed/EventDetailedPage";
 import PeopleDashboardPage from "../../features/user/PeopleDashboardPage/PeopleDashboardPage";
 import EventForm from "../../features/event/EventForm/EventForm";
 import SettingsDashboard from "../../features/user/Settings/SettingDashBoard";

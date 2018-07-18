@@ -1,36 +1,57 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux'
+import cuid from 'cuid';
 import { Segment, Form, Button } from "semantic-ui-react";
+import { createEvent, updateEvent } from '../eventActions'
 
-const emptyEvent = {
-  title: '',
-  date: '',
-  city: '',
-  venue: '',
-  hostedBy: ''
-};
+const mapState =(state, ownProps) => {
+  const eventId =ownProps.match.params.id;
+
+
+  let event = {
+    title: '',
+    date: '',
+    city: '',
+    venue: '',
+    hostedBy: ''
+  }
+
+  if (eventId && state.events.length > 0){
+    event = state.events.filter(event => event.id === eventId)[0]
+  }
+  return{
+    event
+  }
+}
+
+const actions ={
+  createEvent,
+  updateEvent
+}
+
 
 class EventForm extends Component {
   state = {
     
-      event: emptyEvent
+      event: Object.assign({}, this.props.event)
    
   }
 
-  componentDidMount() {
-    if (this.props.selectedEvent !== null) {
-      this.setState({
-        event: this.props.selectedEvent
-      });
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.selectedEvent !== null) {
+  //     this.setState({
+  //       event: this.props.selectedEvent
+  //     });
+  //   }
+  // }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedEvent !== this.props.selectedEvent) {
-      this.setState({
-        event: nextProps.selectedEvent || emptyEvent
-      });
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.selectedEvent !== this.props.selectedEvent) {
+  //     this.setState({
+  //       event: nextProps.selectedEvent || emptyEvent
+  //     });
+  //   }
+  // }
 
   onFormSubmit = (evt) => {
     evt.preventDefault();
@@ -113,4 +134,4 @@ class EventForm extends Component {
     );
   }
 }
-export default EventForm;
+export default connect( mapState, actions)(EventForm);
