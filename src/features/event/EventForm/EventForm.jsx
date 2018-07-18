@@ -5,7 +5,7 @@ import { Segment, Form, Button } from "semantic-ui-react";
 import { createEvent, updateEvent } from '../eventActions'
 
 const mapState =(state, ownProps) => {
-  const eventId =ownProps.match.params.id;
+  const eventId = ownProps.match.params.id;
 
 
   let event = {
