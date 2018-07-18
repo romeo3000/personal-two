@@ -4,11 +4,11 @@ import { Button } from 'semantic-ui-react'
 import { incrementCounter, decrementCounter } from './testActions'
 
 
-const mapState =(state)=>({
+const mapState = (state) =>({
     data:state.test.data
 })
 
-const actions ={
+const actions = {
   incrementCounter,
   decrementCounter
 }
