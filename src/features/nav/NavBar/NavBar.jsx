@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Container, Button, Image} from 'semantic-ui-react'
-import logo from '../../../assets//logo.png'
+import logo from '../../../Logo/logo.png'
 import { NavLink, Link, withRouter} from 'react-router-dom'
 import SignedOutMenu from '../Menus/SignedOutMenu'
 import SignedInMenu from '../Menus/SignedInMenu'
