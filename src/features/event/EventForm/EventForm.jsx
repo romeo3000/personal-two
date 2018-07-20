@@ -57,8 +57,15 @@ class EventForm extends Component {
     evt.preventDefault();
     if (this.state.event.id) {
       this.props.updateEvent(this.state.event);
+      this.props.history.goBack();
     } else {
-      this.props.createEvent(this.state.event)
+      const newEvent ={
+        ...this.state.event,
+        id:cuid(),
+        hostPhotoURL:'/assests/user.png'
+      }
+      this.props.createEvent(newEvent)
+      this.props.history.push('/events')
     }
   }
 
@@ -126,7 +133,7 @@ class EventForm extends Component {
           <Button positive type="submit">
             Submit
           </Button>
-          <Button onClick={handleCancel} type="button">
+          <Button onClick={this.props.history.goBack} type="button">
             Cancel
           </Button>
         </Form>
