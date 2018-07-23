@@ -96,7 +96,7 @@ const {invalid, submitting, pristine} = this.props;
           <Field name='city' type='text' component={TextInput} placeholder='Event City' />
           <Field name='venue' type='text' component={TextInput} placeholder='Event Venue' />
           <Field name='date' type='text' component={TextInput} placeholder='Give Date' />       
-          <Button disabled={invalid || submitting ||pristine} positive type="submit">
+          <Button disabled={invalid || submitting || pristine} positive type="submit">
             Submit
           </Button>
           <Button onClick={this.props.history.goBack} type="button">
