@@ -41,7 +41,7 @@ const category = [
 const validate = combineValidators({
 title: isRequired({message: 'The event title is required'}),
 category: isRequired({message: 'Please provide a category'}),
-description: combineValidators(
+description: composeValidators(
 isRequired({message: 'Please enter a description'}),
 hasLengthGreaterThan(5)({
   message:'Your Description must be 4 characters or less'
@@ -81,6 +81,8 @@ class EventForm extends Component {
   
   render() {
 
+const {invalid, submitting, pristine} = this.props;
+
     return (
       <Grid>
       <Grid.Column width={10}>
@@ -94,7 +96,7 @@ class EventForm extends Component {
           <Field name='city' type='text' component={TextInput} placeholder='Event City' />
           <Field name='venue' type='text' component={TextInput} placeholder='Event Venue' />
           <Field name='date' type='text' component={TextInput} placeholder='Give Date' />       
-          <Button positive type="submit">
+          <Button disabled={invalid || submitting ||pristine} positive type="submit">
             Submit
           </Button>
           <Button onClick={this.props.history.goBack} type="button">
