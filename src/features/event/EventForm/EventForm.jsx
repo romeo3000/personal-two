@@ -6,6 +6,8 @@ import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
 import { createEvent, updateEvent } from '../eventActions';
 import TextInput  from '../../../app/common/form/TextInput'
 import TextArea  from '../../../app/common/form/TextArea'
+import SelectInput  from '../../../app/common/form/SelectInput'
+
 
 const mapState =(state, ownProps) => {
   const eventId = ownProps.match.params.id;
@@ -27,30 +29,24 @@ const mapState =(state, ownProps) => {
   }
 }
 
-const actions ={
+const actions = {
   createEvent,
   updateEvent
-}
+};
+
+const category = [
+    {key: 'drinks', text: 'Drinks', value: 'drinks'},
+    {key: 'culture', text: 'Culture', value: 'culture'},
+    {key: 'film', text: 'Film', value: 'film'},
+    {key: 'food', text: 'Food', value: 'food'},
+    {key: 'music', text: 'Music', value: 'music'},
+    {key: 'travel', text: 'Travel', value: 'travel'},
+];
 
 
 class EventForm extends Component {
 
 
-  // componentDidMount() {
-  //   if (this.props.selectedEvent !== null) {
-  //     this.setState({
-  //       event: this.props.selectedEvent
-  //     });
-  //   }
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.selectedEvent !== this.props.selectedEvent) {
-  //     this.setState({
-  //       event: nextProps.selectedEvent || emptyEvent
-  //     });
-  //   }
-  // }
 
   onFormSubmit = (evt) => {
     evt.preventDefault();
@@ -78,7 +74,7 @@ class EventForm extends Component {
         <Header sub color='teal' content='Event Details'/>
         <Form onSubmit={this.onFormSubmit}>
           <Field name='title' type='text' component={TextInput} placeholder='Give your event a name' />
-          <Field name='catergory' type='text' component={TextInput} placeholder='What is your event about' />
+          <Field name='catergory' type='text' component={SelectInput} options={category} multiple={true} placeholder='What is your event about' />
           <Field name='description' type='text' rows={3} component={TextArea} placeholder='Tell us about your event' />
           <Header sub color='teal' content='Event Location Details'/>
           <Field name='city' type='text' component={TextInput} placeholder='Event City' />
