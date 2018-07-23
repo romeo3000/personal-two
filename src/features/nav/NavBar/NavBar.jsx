@@ -35,7 +35,7 @@ this.setState({
           <Image className="ui mini image"  src={logo}  alt='PlyaGame' />
            </Menu.Item>
             <Menu.Item as={NavLink}to ='/events' name="Games" /> 
-            <Menu.Item as={NavLink}to ='/test' name="Test" /> 
+            <Menu.Item as={NavLink}to ='' name="" /> 
             {authenticated &&
             <Menu.Item as={NavLink}to ='/people' name="People" /> }
             {authenticated &&

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { reduxForm,Field } from 'redux-form'
+import moment from 'moment'
 import {combineValidators, composeValidators,isRequired, hasLengthGreaterThan } from 'revalidate'
 import cuid from 'cuid';
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
@@ -8,6 +9,8 @@ import { createEvent, updateEvent } from '../eventActions';
 import TextInput  from '../../../app/common/form/TextInput'
 import TextArea  from '../../../app/common/form/TextArea'
 import SelectInput  from '../../../app/common/form/SelectInput'
+import DateInput  from '../../../app/common/form/DateInput'
+
 
 
 const mapState =(state, ownProps) => {
@@ -61,8 +64,8 @@ class EventForm extends Component {
 
 
   onFormSubmit = values => {
-   
-    
+values.date=moment(values.date).format()
+
     if (this.props.initialValues) {
       this.props.updateEvent(values);
       this.props.history.goBack();
@@ -95,7 +98,10 @@ const {invalid, submitting, pristine} = this.props;
           <Header sub color='teal' content='Event Location Details'/>
           <Field name='city' type='text' component={TextInput} placeholder='Event City' />
           <Field name='venue' type='text' component={TextInput} placeholder='Event Venue' />
-          <Field name='date' type='text' component={TextInput} placeholder='Give Date' />       
+          <Field name='date' type='text' component={DateInput} dateFormat='YYYY-MM-DD HH:mm' 
+          timeFormat='HH:mm'
+          showTimeSelect
+          placeholder='Date and time of Event' />       
           <Button disabled={invalid || submitting || pristine} positive type="submit">
             Submit
           </Button>
