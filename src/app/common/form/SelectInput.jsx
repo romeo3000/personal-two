@@ -18,6 +18,7 @@ const SelectInput = ({
         placeholder={placeholder}
         options={options}
         multiple={multiple}
+        type={type}
       />
       {touched && error && <Label basic color='red'>{error}</Label>}
 

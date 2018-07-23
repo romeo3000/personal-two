@@ -14,11 +14,24 @@ import PlacesAutocomplete from 'react-places-autocomplete'
       scriptLoaded:true });
 
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+      const { input, width, onSelect, placeholder, options, meta :{touched, error}} =this.props
+    
+      return (
+
+     <Form.Field error={touched && !!error} width={width} >
+     <Script
+        url='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXigGmuzGniH791b00weA_XHGZMqQoUw&libraries=places'
+        onLoad={this.handleScriptLoad}
+        />
+        {this.state.scriptLoaded &&
+        <PlacesAutocomplete
+        inputProps={{...input, placeholder}}
+        options={options}
+        onSelect={onSelect}
+        />}
+         {touched && error && <Label basic color='red'> {error}</Label>}
+     </Form.Field>
+    );
   }
 }
 export default PlaceInput
