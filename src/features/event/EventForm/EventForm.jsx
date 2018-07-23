@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { reduxForm,Field } from 'redux-form'
+import {combineValidators, composeValidators,isRequired, hasLengthGreaterThan } from 'revalidate'
 import cuid from 'cuid';
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
 import { createEvent, updateEvent } from '../eventActions';
@@ -36,6 +37,23 @@ const category = [
     {key: 'music', text: 'Music', value: 'music'},
     {key: 'travel', text: 'Travel', value: 'travel'},
 ];
+
+const validate = combineValidators({
+title: isRequired({message: 'The event title is required'}),
+category: isRequired({message: 'Please provide a category'}),
+description: combineValidators(
+isRequired({message: 'Please enter a description'}),
+hasLengthGreaterThan(5)({
+  message:'Your Description must be 4 characters or less'
+}))(),
+city: isRequired('city'),
+venue: isRequired('venue'),
+date: isRequired('date')
+
+
+})
+
+
 
 
 class EventForm extends Component {
@@ -90,4 +108,4 @@ class EventForm extends Component {
     );
   }
 }
-export default connect( mapState, actions)(reduxForm({form:'eventForm', enableReinitialize:true})(EventForm));
+export default connect( mapState, actions)(reduxForm({form:'eventForm', enableReinitialize:true, validate})(EventForm));
