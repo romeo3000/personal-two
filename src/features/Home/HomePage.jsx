@@ -25,23 +25,7 @@ const Home = ({history}) => {
           </div>
         </div>
       </div>
-      {/* <div style={{ textAlign: 'center' }}>
-        Icons made by{' '}
-        <a href="" title="Freepik">
-          Freepik
-        </a>{' '}
-        from{' '}
-        <a href="" title="Flaticon">
-          www.flaticon.com
-        </a>{' '}
-        is licensed by{' '}
-        <a
-          href=""
-          title="Creative Commons BY 3.0"
-        >
-          CC 3.0 BY
-        </a>
-      </div> */}
+      
     </div>
 
   )
