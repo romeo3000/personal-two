@@ -3,21 +3,21 @@ import {createReducer } from '../../app/common/util/reducerUtil'
 
 
 const initialState = {
-    currentUser:{}
+    currentUser: {}
 }
 
 
-export const loginUser =(state, payload) => {
-    return{
-        ...state, authenticate:true,
+export const loginUser = (state, payload) => {
+    return {
+        ...state, authenticate: true,
         currentUser: payload.creds.email
     }
 }
 
-export const signOutUser =(state, payload) => {
-    return{
+export const signOutUser = (state, payload) => {
+    return {
         ...state, authenticate:false,
-        currentUser:{}
+        currentUser: {}
     }
 }  
 

@@ -5,7 +5,7 @@ import logo from '../../../Logo/logo.png'
 import { NavLink, Link, withRouter} from 'react-router-dom'
 import SignedOutMenu from '../Menus/SignedOutMenu'
 import SignedInMenu from '../Menus/SignedInMenu'
-import {openModal } from '../../modals/modalActions'
+import { openModal } from '../../modals/modalActions'
 import { logout } from '../../auth/authActions'
 
 
@@ -14,7 +14,7 @@ const actions = {
   logout
 }
 
-const mapState =(state) =>({
+const mapState = (state) =>({
   auth: state.auth
 })
 
@@ -43,7 +43,7 @@ handleSignOut = () =>{
     const authenticated = auth.authenticated
     return (
      
-       <Menu inverted fixed="top">
+       <Menu inverted fixed ="top">
          <Container>
            <Menu.Item as={NavLink} to='/' header>
           

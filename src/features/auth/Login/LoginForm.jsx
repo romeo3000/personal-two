@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Form, Segment, Button } from 'semantic-ui-react';
-import { Field ,reduxForm} from 'redux-form';
+import { Field, reduxForm} from 'redux-form';
 import TextInput from '../../../app/common/form/TextInput';
 import { login } from '../authActions'
 
