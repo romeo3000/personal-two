@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Menu, Container, Button, Image} from 'semantic-ui-react'
 import logo from '../../../Logo/logo.png'
 import { NavLink, Link, withRouter} from 'react-router-dom'
 import SignedOutMenu from '../Menus/SignedOutMenu'
 import SignedInMenu from '../Menus/SignedInMenu'
+import {openModal } from '../../modals/modalActions'
+
+
+const actions ={
+  openModal
+}
+
 
 class NavBar extends Component {
 state = {
@@ -11,10 +19,14 @@ state = {
 };
 
 handleSignIn = () => {
-  this.setState({
-    authenticated:true
-  })
-}
+  this.props.openModal('LoginModal')
+  }
+
+
+  handleRegister = () => {
+    this.props.openModal('RegisterModal')
+    }
+  
 
 handleSignOut = () =>{
 this.setState({
@@ -42,7 +54,7 @@ this.setState({
            <Menu.Item>
              <Button as={Link} to='/createEvent' floated="right" positive inverted content="Create Game" />
            </Menu.Item>}
-    {authenticated  ? (<SignedInMenu signOut={this.handleSignOut}/> ) : ( <SignedOutMenu signIn={this.handleSignIn}/>) }
+    {authenticated  ? (<SignedInMenu signOut={this.handleSignOut}/> ) : ( <SignedOutMenu signIn={this.handleSignIn} register={this.handleRegister}/>) }
            
           
            
@@ -52,4 +64,4 @@ this.setState({
     )
   }
 }
-export default withRouter(NavBar);
+export default withRouter(connect(null, actions)(NavBar));
