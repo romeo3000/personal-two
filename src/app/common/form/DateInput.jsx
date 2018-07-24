@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Label } from 'semantic-ui-react'
+import { Form, Label } from 'semantic-ui-react/dist/commonjs'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment'

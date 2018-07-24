@@ -7,7 +7,7 @@ import Script from 'react-load-script'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import {combineValidators, composeValidators,isRequired, hasLengthGreaterThan } from 'revalidate'
 import cuid from 'cuid';
-import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
+import { Segment, Form, Button, Grid, Header } from "semantic-ui-react/dist/commonjs";
 import { createEvent, updateEvent } from '../eventActions';
 import TextInput  from '../../../app/common/form/TextInput'
 import TextArea  from '../../../app/common/form/TextArea'
@@ -102,7 +102,7 @@ handleVenueSelect = selectedVenue => {
 
   onFormSubmit = values => {
 values.date=moment(values.date).format()
-values.venueLatLng =this.state.venueLatLng;
+values.venueLatLng = this.state.venueLatLng;
     if (this.props.initialValues) {
       this.props.updateEvent(values);
       this.props.history.goBack();

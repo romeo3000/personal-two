@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image } from 'semantic-ui-react'
+import {Image } from 'semantic-ui-react/dist/commonjs'
 import logo from '../../Logo/logo.png'
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Label, Select } from "semantic-ui-react";
+import { Form, Label, Select } from "semantic-ui-react/dist/commonjs";
 
 const SelectInput = ({
     
