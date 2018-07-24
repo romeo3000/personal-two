@@ -13,12 +13,12 @@ const Home = ({history}) => {
             <Image
               className="ui image massive"
               src={logo}
-              alt='PlyaGame'
+              alt='iEventz'
             />
 
-            <div className="content">Ply a Game</div>
+            <div className="content">iEventz</div>
           </h1>
-          <h2>Create A Game and Share With Friends!!</h2>
+          <h2>Create an Event and Share it With Your Friends!!</h2>
           <div onClick={()=>history.push('/events') }className="ui huge white inverted button">
             Get Started
             <i className="right arrow icon" />

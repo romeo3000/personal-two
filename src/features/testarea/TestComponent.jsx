@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import Script from 'react-load-script';
+//import Script from 'react-load-script';
 import GoogleMapReact from 'google-map-react';
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -59,10 +59,10 @@ class TestComponent extends Component {
     const { incrementCounter, decrementCounter, data } = this.props;
     return (
       <div>
-         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTN8X_q_xtMYCnacteF4ZQj0RKXodI080&libraries=places"
+         {/* <Script
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXigGmuzGniH791b00weA_XHGZMqQoUw&libraries=places"
           onLoad={this.handleScriptLoad}
-        /> 
+        />  */}
         <h1>Test Area</h1>
         <h3>The answer is: {data}</h3>
         <Button onClick={incrementCounter} color="green" content="Increment" />
@@ -78,14 +78,14 @@ class TestComponent extends Component {
 
       <div style={{ height: '300px', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyCTN8X_q_xtMYCnacteF4ZQj0RKXodI080' }}
+          bootstrapURLKeys={{ key: 'AIzaSyDrXigGmuzGniH791b00weA_XHGZMqQoUw' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
           <Marker
             lat={59.955413}
             lng={30.337844}
-            text={'Kreyser Avrora'}
+           
           />
         </GoogleMapReact>
       </div>

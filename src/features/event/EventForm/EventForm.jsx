@@ -18,7 +18,7 @@ import PlaceInput  from '../../../app/common/form/PlaceInput'
 
 
 
-const mapState =(state, ownProps) => {
+const mapState = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
 
 
@@ -60,7 +60,6 @@ date: isRequired('date')
 
 
 })
-
 
 
 
