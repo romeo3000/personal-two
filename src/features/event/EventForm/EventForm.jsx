@@ -1,11 +1,11 @@
 /*global google*/
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-import { reduxForm,Field } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 import moment from 'moment'
 import Script from 'react-load-script'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import {combineValidators, composeValidators,isRequired, hasLengthGreaterThan } from 'revalidate'
+import { combineValidators, composeValidators,isRequired, hasLengthGreaterThan } from 'revalidate'
 import cuid from 'cuid';
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react/dist/commonjs";
 import { createEvent, updateEvent } from '../eventActions';
@@ -27,7 +27,7 @@ const mapState = (state, ownProps) => {
   if (eventId && state.events.length > 0){
     event = state.events.filter(event => event.id === eventId)[0]
   }
-  return{
+  return {
   initialValues:event
   }
 }
@@ -58,16 +58,15 @@ city: isRequired('city'),
 venue: isRequired('venue'),
 date: isRequired('date')
 
-
 })
-
+  
 
 
 class EventForm extends Component {
-state ={
-  cityLatLng:{},
-  venueLatLng:{},
-  scriptLoaded:false
+state = {
+  cityLatLng: {},
+  venueLatLng: {},
+  scriptLoaded: false
 }
 
 handleScriptLoaded = () => this.setState({
@@ -81,7 +80,7 @@ handleCitySelect = (selectedCity) => {
       cityLatLng:latlng
     })
   })
-  .then(()=>{
+  .then(() => {
     this.props.change('city', selectedCity)
   })
 };
@@ -101,13 +100,13 @@ handleVenueSelect = selectedVenue => {
 
 
   onFormSubmit = values => {
-values.date=moment(values.date).format()
+values.date = moment(values.date).format()
 values.venueLatLng = this.state.venueLatLng;
     if (this.props.initialValues) {
       this.props.updateEvent(values);
       this.props.history.goBack();
     } else {
-      const newEvent ={
+      const newEvent = {
         ...values,
         id:cuid(),
         hostPhotoURL:'/assests/user.png',
@@ -127,28 +126,29 @@ const {invalid, submitting, pristine} = this.props;
       <Grid>
          <Script
         url='https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXigGmuzGniH791b00weA_XHGZMqQoUw&libraries=places'
-        onLoad={this.handleScriptLoaded}
+        onLoad = {this.handleScriptLoaded}
         />
-      <Grid.Column width={10}>
+      <Grid.Column width = {10}>
       <Segment>
         <Header sub color='teal' content='Event Details'/>
-        <Form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
-          <Field name='title' type='text' component={TextInput} placeholder='Give your event a name' />
-          <Field name='category' type='text' component={SelectInput} options={category} multiple={true} placeholder='What is your event about' />
-          <Field name='description' type='text' component={TextArea} rows={3} placeholder='Tell us about your event' />
+        <Form onSubmit = {this.props.handleSubmit(this.onFormSubmit)}>
+          <Field name ='title' type='text' component={TextInput} placeholder = 'Give your event a name' />
+          <Field name ='category' type='text' component={SelectInput} options ={category} multiple={true} placeholder='What is your event about' />
+          <Field name ='description' type='text' component={TextArea} rows ={3} placeholder='Tell us about your event' />
           <Header sub color='teal' content='Event Location Details'/>
           <Field name='city' type='text' component={PlaceInput} options={{ types:[`(cities)`]}} placeholder='Event City'
-          onSelect={this.handleCitySelect} />
+          onSelect = {this.handleCitySelect} />
           {this.state.scriptLoaded && 
 
           <Field name='venue' type='text' component={PlaceInput}
           options={{
-            location:new google.maps.LatLng(this.state.cityLatLng),raduis:1000,
+            location: new google.maps.LatLng(this.state.cityLatLng),raduis:1000,
             types: ['establisment']}}
           placeholder='Event Venue' 
           onSelect= {this.handleVenueSelect}
           />}
 
+        
           <Field name='date' type='text' component={DateInput} dateFormat='YYYY-MM-DD HH:mm' 
           timeFormat='HH:mm'
           showTimeSelect

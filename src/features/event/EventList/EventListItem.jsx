@@ -26,7 +26,7 @@ class EventListItem extends Component {
               <span>
                 <Icon name="clock" /> {event.date} |
                 <Icon name="marker" /> {event.venue} |
-                {/* <Icon name="home " />{event.place} */}
+                
               </span>
             </Segment>
             <Segment secondary>

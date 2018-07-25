@@ -1,5 +1,5 @@
 import React from 'react'
-import {Segment, Image, Item, Header, Button  } from 'semantic-ui-react'
+import {Segment, Image, Item, Header, Button,Icon  } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const eventImageStyle = {
@@ -45,12 +45,16 @@ const EventDetailedHeader = ({event}) => {
       <Segment attached="bottom">
         <Button>Cancel My Spot</Button>
         <Button color="teal">JOIN EVENT</Button>
-        <Button  color="violet">Watch Event Live</Button>
+        <Button color='youtube'>
+          <Icon name='youtube' /> YouTube
+        </Button>
         <Button as={Link} to={`/manage/${event.id}`} color="orange" floated="right">
           Manage Event
         </Button>
       </Segment>
     </Segment.Group>  )
 }
+
+
 
 export default EventDetailedHeader
