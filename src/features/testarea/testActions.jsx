@@ -15,12 +15,12 @@ export const decrementCounter = () =>{
 }
 
 export const startCounterAction = () => {
-    return{
+    return {
         type: COUNTER_ACTION_STARTED
     }
 }
 
-export const finishedCounterAction = ()=>{
+export const finishedCounterAction = () =>{
     return {
         type: COUNTER_ACTION_FINISHED
     }
@@ -33,7 +33,7 @@ export const incrementAsync = ( ) => {
     return async dispatch => {
      dispatch(startCounterAction())
      await delay(1000);
-     dispatch ({type:INCREMENT_COUNTER })
+     dispatch ({type: INCREMENT_COUNTER })
      dispatch(finishedCounterAction())
 
     }
@@ -43,7 +43,7 @@ export const decrementAsync = ( ) => {
     return async dispatch => {
      dispatch(startCounterAction())
      await delay(1000);
-     dispatch ({type:DECREMENT_COUNTER })
+     dispatch ({type: DECREMENT_COUNTER })
      dispatch(finishedCounterAction())
 
     }
