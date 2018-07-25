@@ -36,3 +36,4 @@ const RegisterForm = () => {
 };
 
 export default reduxForm({form:'registerForm'}) (RegisterForm);
+
