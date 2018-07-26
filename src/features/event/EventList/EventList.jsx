@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import EventListItem from './EventListItem'
 
-class EvenList extends Component {
+class EventList extends Component {
   render() {
     const { events, deleteEvent} = this.props;
     return (
@@ -23,4 +23,4 @@ class EvenList extends Component {
     );
   }
 }
-export default  EvenList;
+export default  EventList;

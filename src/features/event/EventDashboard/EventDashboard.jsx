@@ -6,7 +6,7 @@ import { deleteEvent } from '../eventActions'
 import LoadingComponent from '../../../app/layout/LoadingComponent'
 
 
-const mapState =(state) => ({
+const mapState = (state) => ({
 events: state.events,
 loading: state.async.loading
 })

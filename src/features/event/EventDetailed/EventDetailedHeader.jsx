@@ -1,5 +1,6 @@
 import React from 'react'
 import {Segment, Image, Item, Header, Button,Icon } from 'semantic-ui-react'
+import format from 'date-fns/format'
 import { Link } from 'react-router-dom'
 
 const eventImageStyle = {
@@ -22,7 +23,7 @@ const EventDetailedHeader = ({event}) => {
    <Segment.Group>
       <Segment basic attached="top" style={{ padding: '0' }}>
       {/* <Embed id='rhZO_Evqy6s' placeholder='' source='youtube' /> */}
-        <Image src={`/assets/categoryImages/${event.category}.jpg`} fluid style={eventImageStyle} /> 
+         <Image src={`/assets/categoryImages/${event.category}.jpg`} fluid style={eventImageStyle} />  
 
         <Segment basic style={eventImageTextStyle}>
           <Item.Group>
@@ -33,7 +34,7 @@ const EventDetailedHeader = ({event}) => {
                   content={event.title}
                   style={{ color: 'white' }}
                 />
-                <p>{event.date}</p>
+                <p>{format(event.date,'dddd Do MMMM')}</p>
                 <p>
                   Hosted by <strong>{event.hostedBy}</strong>
                 </p>

@@ -45,7 +45,7 @@ handleSignOut = () =>{
      
        <Menu inverted fixed ="top">
          <Container>
-           <Menu.Item as={NavLink} to='/' header>
+           <Menu.Item as={Link} to='/' header>
           
           <Image className="ui mini image"  src={logo}  alt='PlyaGame' />
            </Menu.Item>
@@ -57,7 +57,7 @@ handleSignOut = () =>{
            <Menu.Item>
              <Button as={Link} to='/createEvent' floated="right" positive inverted content="Create Game" />
            </Menu.Item>}
-    {authenticated  ? (<SignedInMenu currentUser={auth.currentUser} signOut={this.handleSignOut}/> ) : ( <SignedOutMenu signIn={this.handleSignIn} register={this.handleRegister}/>) }
+    {authenticated  ? (<SignedInMenu currentUser={auth.currentUser} signOut={this.handleSignOut}/> ) : ( <SignedOutMenu  register={this.handleRegister} signIn={this.handleSignIn}/>) }
            
           
            
