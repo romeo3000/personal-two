@@ -1,5 +1,5 @@
 import React from 'react'
-import {Segment, Image, Item, Header, Button,Icon  } from 'semantic-ui-react'
+import {Segment, Image, Item, Header, Button,Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const eventImageStyle = {
@@ -21,7 +21,8 @@ const EventDetailedHeader = ({event}) => {
 
    <Segment.Group>
       <Segment basic attached="top" style={{ padding: '0' }}>
-        <Image src={`/assets/categoryImages/${event.category}.jpg`} fluid style={eventImageStyle} />
+      {/* <Embed id='rhZO_Evqy6s' placeholder='' source='youtube' /> */}
+        <Image src={`/assets/categoryImages/${event.category}.jpg`} fluid style={eventImageStyle} /> 
 
         <Segment basic style={eventImageTextStyle}>
           <Item.Group>
