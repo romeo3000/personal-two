@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Segment, Item,Icon,List,Button } from 'semantic-ui-react'
+import { Segment, Item, Icon, List, Button } from 'semantic-ui-react'
 import {Link  } from 'react-router-dom'
 import format from 'date-fns/format'
 import EventListAttendee from './EventListAttendee'
