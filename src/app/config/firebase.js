@@ -13,13 +13,9 @@ apiKey: "AIzaSyBGyqNCzkiuJgxm8StEh84QDSBQXR-mQcs",
 
 firebase.initializeApp(firebaseConFig);
 
+
 const firestore = firebase.firestore();
-const settings = {
-    timestampInSnapshots: true
-} 
-(firestore.settings(settings)
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+firestore.settings(settings);
 
 export default firebase;
-
-
-

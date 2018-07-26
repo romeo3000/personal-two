@@ -21,7 +21,7 @@ const styles = {
       scriptLoaded:true });
 
   render() {
-      const { input, width, onSelect, placeholder, options, meta :{touched, error}} =this.props
+      const { input, width, onSelect, placeholder,multiple, options, meta :{touched, error}} =this.props
     
       return (
 
@@ -35,6 +35,7 @@ const styles = {
         inputProps={{...input, placeholder}}
         options={options}
         onSelect={onSelect}
+        multiple={multiple}
         styles={styles}
         />)}
          {touched && error && <Label basic color='red'> {error}</Label>}
