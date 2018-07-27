@@ -14,8 +14,8 @@ class LoginModal extends Component {
                 open={true}
                 onClose={this.props.closeModal}
             >
-                <Modal.Header>
-                    Login 
+                <Modal.Header className= 'ui.modalHeader' >
+                <div align={'center'} ><h1>  Login  </h1></div>
                 </Modal.Header>
                 <Modal.Content>
                     <Modal.Description>

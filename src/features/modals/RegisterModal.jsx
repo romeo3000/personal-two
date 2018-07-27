@@ -16,7 +16,7 @@ class RegisterModal extends Component {
                 onClose={this.props.closeModal}
             >
                 <Modal.Header>
-                    Sign Up 
+                   <div align={'center'} ><h1> Sign Up </h1></div>
                 </Modal.Header>
                 <Modal.Content>
                     <Modal.Description>

@@ -38,7 +38,7 @@ try {
     displayName : user.displayName,
     createdAt: firestore.FieldValue.serverTimestamp()
       }
-      await firestore.set(`users/${createdUser}`,{...newUser});
+      await firestore.set(`users/${createdUser.uid}`,{...newUser});
       dispatch(closeModal());
 
 }catch(error){

@@ -256,3 +256,11 @@
 .buttonNav{
   color:#ffc107; 
 }
+
+.ui.modal > .header{
+  background-color:  #dcff17 !important;
+}
+/* 
+.ui.modal > .header{
+  background-color: gold !important;
+} */
