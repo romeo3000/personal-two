@@ -15,7 +15,7 @@ class LoginModal extends Component {
                 onClose={this.props.closeModal}
             >
                 <Modal.Header>
-                    Login to IEventZ !
+                    Login 
                 </Modal.Header>
                 <Modal.Content>
                     <Modal.Description>

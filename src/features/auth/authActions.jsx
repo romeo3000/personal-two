@@ -1,6 +1,7 @@
-import { SIGN_OUT_USER } from "./authConstants";
+import {  } from "./authConstants";
 import { SubmissionError } from 'redux-form'
 import { closeModal } from "../modals/modalActions";
+
 
 export const login = creds => {
   return async (dispatch, getState, { getFirebase }) => {
@@ -20,8 +21,32 @@ export const login = creds => {
   };
 };
 
-export const logout = () => {
-  return {
-    type: SIGN_OUT_USER
-  };
-};
+export const registerUser = user => 
+async ( dispatch, getState, {getFirebase, getFirestore}) => {
+   const firebase = getFirebase();
+   const firestore = getFirestore();
+try { 
+    //i will need to setup the user in auth 
+    let createdUser = await firebase.auth().createUserwithEmailAndPassword(user.email, user.password);
+    console.log(createdUser);
+    // will update the auth profile to 
+    await createdUser.updateProfile({
+        displayName: user.displayName
+    })
+    //create a new profile in firestore
+    let newUser = {
+    displayName : user.displayName,
+    createdAt: firestore.FieldValue.serverTimestamp()
+      }
+      await firestore.set(`users/${createdUser}`,{...newUser});
+      dispatch(closeModal());
+
+}catch(error){
+    console.log(error)
+}
+
+
+
+}
+
+
