@@ -1,5 +1,5 @@
-import {} from "./authConstants";
-import { SubmissionError} from "redux-form";
+import {toastr} from'react-redux-toastr';
+import { SubmissionError,reset } from "redux-form";
 import { closeModal } from "../modals/modalActions";
 
 export const login = creds => {
@@ -20,7 +20,7 @@ export const login = creds => {
   };
 };
 
-export const registerUser = (user) => async (
+export const registerUser = user => async (
   dispatch,
   getState,
   { getFirebase, getFirestore }
@@ -36,7 +36,7 @@ export const registerUser = (user) => async (
     // will update the auth profile to
     await createdUser.updateProfile({
       displayName: user.displayName
-    })
+    });
     //create a new profile in firestore
     let newUser = {
       displayName: user.displayName,
@@ -50,38 +50,55 @@ export const registerUser = (user) => async (
       _error: error.message
     });
   }
+};
+
+export const socialLogin = selectedProvider => async (
+  dispatch,
+  getState,
+  { getFirebase, getFirestore }
+) => {
+  const firebase = getFirebase();
+  const firestore = getFirestore();
+
+  // this is when the modal will not display due to the firebase flow?
+  // and dispatch will work witht the selected provider
+  try {
+    dispatch(closeModal());
+    let user = await firebase.login({
+      provider: selectedProvider,
+      type: "popup"
+    });
+    // test to see if user is getting all the details from provider
+    // console.log(user)
+    //this allow if user signed in a second time blah balh?
+    if (user.additionalUserInfo.isNewUser) {
+      await firestore.set(`users/${user.user.uid}`, {
+        displayName: user.profile.displayName,
+        photoURL: user.profile.avatarUrl,
+        createdAt: firestore.FieldValue.serverTimestamp()
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+// seting up auth actions and hookup update setting of user profile to the settingPage
+
+export const updatePassword = (creds) =>
+async (dispatch, getState, {getFirebase}) => {
+const firebase = getFirebase();
+const user = firebase.auth().currentUser;
+try {
+await user.updatePassword(creds.newPassword1);
+await dispatch(reset('account'));
+toastr.success('Successfully', 'Your password has been updated')
+} catch(error){
+throw new SubmissionError({
+  _error: error.message
+})
+
 }
 
 
-export const socialLogin = (selectedProvider) => 
-  async (dispatch, getState, {getFirebase, getFirestore}) => {
-    const firebase = getFirebase();
-    const firestore = getFirestore();
-   
-    // this is when the modal will not display due to the firebase flow?
-    // and dispatch will work witht the selected provider
-    try { 
-      dispatch(closeModal());
-     let user = await firebase.login({
-      provider: selectedProvider,
-      type: 'popup'
-        
-      })
-      // test to see if user is getting all the details from provider
-      // console.log(user)
-      //this allow if user signed in a second time blah balh?
-      if(user.additionalUserInfo.isNewUser){
-        await firestore.set(`users/${user.user.uid}`, {
-          displayName: user.profile.displayName,
-          photoURL: user.profile.avatarUrl,
-          createdAt: firestore.FieldValue.serverTimestamp()
-        })
-      }
-
-    } catch (error){
-   console.log(error)
-   }
-
-    
-  }
+}
 
