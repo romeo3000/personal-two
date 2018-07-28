@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { combineValidators, isRequired } from 'revalidate'
 import TextInput from '../../../app/common/form/TextInput';
 import { registerUser } from '../authActions'
-// import SocialLogin from '../SocialLogin/SocialLogin'
+import SocialLogin from '../SocialLogin/SocialLogin'
 
 const actions = {
   registerUser
@@ -45,7 +45,7 @@ const RegisterForm = ({registerUser, handleSubmit, error, invalid, submitting}) 
             Register
           </Button>
           <Divider horizontal>Or</Divider>
-        {/* <SocialLogin/> */}
+        <SocialLogin/> 
         </Segment>
       </Form>
     </div>
