@@ -4,17 +4,19 @@ import {Link  } from 'react-router-dom'
 import format from 'date-fns/format'
 import EventListAttendee from './EventListAttendee'
 
+
  
 class EventListItem extends Component {
   render() {
+   
     const {event, deleteEvent} = this.props;
     return (
         
-         <Segment.Group >
+         <Segment.Group color='' >
             <Segment >
               <Item.Group>
-                <Item>
-                  <Item.Image size="tiny" circular src = {event.hostPhotoURL} />
+                <Item >
+                  <Item.Image size="tiny" circular src = {event.hostPhotoURL}   border={'white'}/>
                   <Item.Content>
                     <Item.Header as="a">{event.title}</Item.Header>
                     <Item.Description>

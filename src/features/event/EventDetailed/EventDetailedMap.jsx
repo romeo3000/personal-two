@@ -26,4 +26,4 @@ const EventDetailedMap = ({lat,lng}) => {
   )
 }
 
-export default EventDetailedMap
+export default EventDetailedMap;
