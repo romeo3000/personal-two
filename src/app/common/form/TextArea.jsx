@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Label } from 'semantic-ui-react/dist/commonjs'
+import { Form, Label } from 'semantic-ui-react'
 
 
 const TextArea = ({input, rows, width, type, placeholder, meta:{touched, error}}) => {

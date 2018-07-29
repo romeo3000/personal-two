@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const SettingsNav = () => {
   return (
       <Grid.Column width={4}>
-        <Menu vertical>
+        <Menu vertical >
           <Header icon="user" attached inverted color="grey" content="Profile" />
           <Menu.Item as={NavLink} to='/settings/basic'>Basics</Menu.Item>
           <Menu.Item as={NavLink} to='/settings/about' >About Me</Menu.Item>
