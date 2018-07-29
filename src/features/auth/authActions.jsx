@@ -2,7 +2,7 @@ import {toastr} from'react-redux-toastr';
 import { SubmissionError,reset } from "redux-form";
 import { closeModal } from "../modals/modalActions";
 
-export const login = creds => {
+export const login = (creds) => {
   return async (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 

@@ -37,7 +37,7 @@ const SettingDashBoard = ({updatePassword,providerId, user,updateProfile}) => {
     <Switch>
       <Redirect exact from ='/settings' to='/settings/basic'/>
       <Route path='/settings/basic' render={()=> <BasicPage updateProfile={updateProfile} initialValues={user}/>}/>
-      <Route path='/settings/about' component={AboutPage}/>
+      <Route path='/settings/about' render={()=> <AboutPage updateProfile={updateProfile} initialValues={user}/>}/>
       <Route path='/settings/photos' component={PhotosPage}/>
       {/* this game so much trouble until i was help about the render function to fix issue  component={AccountPage}*/}
       <Route path='/settings/accounts' render={()=> <AccountPage updatePassword={updatePassword} providerId={providerId}/>} />
