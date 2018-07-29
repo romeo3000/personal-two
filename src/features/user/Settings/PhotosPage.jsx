@@ -126,7 +126,8 @@ class PhotosPage extends Component {
             {/* adding the onDrop method to DropZone & multiple =false allows only one photo at a time */}
             <Dropzone onDrop={this.onDrop} multiple={false}>
               <div style={{ paddingTop: "30px", textAlign: "center", background:'gold' }}>
-                <Icon name="upload" size="huge" />
+                <Icon name="cloud upload" size="huge" />
+                
                 <Header  content="Drop your image here" />
               </div>
             </Dropzone>

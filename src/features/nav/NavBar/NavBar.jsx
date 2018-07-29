@@ -44,7 +44,7 @@ class NavBar extends Component {
             <Image className="ui mini image" src={logo} alt="PlyaGame" />
           </Menu.Item>
           <Menu.Item as={NavLink} to="/events" name="Games" />
-          <Menu.Item as={NavLink} to="/test" name="test" />
+          {/* <Menu.Item as={NavLink} to="/test" name="test" /> */}
           {authenticated && 
             <Menu.Item as={NavLink} to="/people" name="People" />
           }
@@ -54,7 +54,7 @@ class NavBar extends Component {
                 as={Link}
                 to="/createEvent"
                 floated="right"
-                positive
+               
                 inverted
                 content="Create Event"
               />
