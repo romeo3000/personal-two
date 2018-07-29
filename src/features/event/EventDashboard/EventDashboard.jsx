@@ -55,4 +55,5 @@ class EventDashboard extends Component {
     );
   }
 }
+//firstore set the listner due HOC and {connect to the store} {react-redux-firebase}copy data into array instaed of obj 
 export default connect(mapState, actions)(firestoreConnect([{ collection: 'events'}])(EventDashboard));

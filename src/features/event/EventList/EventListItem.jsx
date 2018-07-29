@@ -28,8 +28,9 @@ class EventListItem extends Component {
             </Segment>
             <Segment>
               <span>
-                <Icon name="clock" /> {format(event.date, 'dddd Do MMMM' )} at {' '}
-                {format(event.date, 'HH:mm')} |
+                {/* add toDate to help fix the firebase timestamp issues due verison of Fbase */}
+                <Icon name="clock" /> {format(event.date.toDate(), 'dddd Do MMMM' )} at {' '}
+                {format(event.date.toDate(), 'HH:mm')} |
                 <Icon name="marker" /> {event.venue} |
                 
               </span>
