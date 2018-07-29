@@ -10,10 +10,11 @@ newPassword2: composeValidators( isRequired({message:'Please confirm your passwo
 matchesField('newPassword1')({message:'Passwords do not match'}))()
 })
 
-const AccountPage = ({ error, invalid, submitting,handleSubmit,updatePassword }) => {
+const AccountPage = ({ error, invalid, submitting, handleSubmit, updatePassword, providerId }) => {
   return (
     <Segment>
       <Header dividing size="large" content="Account" />
+      {providerId && providerId === 'password' &&
       <div>
         <Header color="teal" sub content="Change password" />
         <p>Use this form to update your account settings</p>
@@ -46,7 +47,10 @@ const AccountPage = ({ error, invalid, submitting,handleSubmit,updatePassword })
           <Divider />
           <Button   disabled ={ invalid || submitting }size="large" positive content="Update Password" />
         </Form>
-      </div>
+      </div>}
+         
+       {/* using providerId to check facebook accounts  */}
+       {providerId && providerId === 'facebook.com' &&
 
       <div>
         <Header color="teal" sub content="Facebook Account" />
@@ -55,8 +59,9 @@ const AccountPage = ({ error, invalid, submitting,handleSubmit,updatePassword })
           <Icon name="facebook" />
           Go to Facebook
         </Button>
-      </div>
+      </div>}
 
+      {providerId && providerId === 'google.com' &&
       <div>
         <Header color="teal" sub content="Google Account" />
         <p>Please visit Google to update your account settings</p>
@@ -64,7 +69,20 @@ const AccountPage = ({ error, invalid, submitting,handleSubmit,updatePassword })
           <Icon name="google plus" />
           Go to Google
         </Button>
-      </div>
+      </div>}
+
+       {providerId && providerId === 'twitter.com' &&
+      <div>
+        <Header color="teal" sub content="Twitter account" />
+        <p>Please visit Google to update your account settings</p>
+        <Button type="button" color="twitter">
+          <Icon name="twitter" />
+          Go to Twitter
+        </Button>
+      </div>}
+
+
+
     </Segment>
   );
 };

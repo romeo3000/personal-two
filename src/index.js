@@ -42,6 +42,9 @@ let render = () => {
         });
     }
 
+    // this allows me to get auth done by firebase first then render the compdidload!!
+store.firebaseAuthIsReady.then(()=>{
+    render();
+})
 
-render();
 registerServiceWorker();

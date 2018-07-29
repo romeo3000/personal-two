@@ -15,11 +15,19 @@ import {updatePassword  } from '../../auth/authActions'
 // connect to the store // setup actions updates as props
 
 
-const actions ={
+const actions = {
   updatePassword
 }
 
-const SettingDashBoard = ({updatePassword}) => {
+// will need to pass down or to get state from the store
+const mapState = (state) => ({
+providerId: state.firebase.auth.providerData[0].providerId
+})
+// issue have shown itself with the {state.firebase.auth.providerData[0]} 
+//due to component load before authentication
+
+
+const SettingDashBoard = ({updatePassword,providerId}) => {
   return (
   <Grid>
     <Grid.Column width={12}>
@@ -29,7 +37,7 @@ const SettingDashBoard = ({updatePassword}) => {
       <Route path='/settings/about' component={AboutPage}/>
       <Route path='/settings/photos' component={PhotosPage}/>
       {/* this game so much trouble until i was help about the render function to fix issue  component={AccountPage}*/}
-      <Route path='/settings/accounts' render={()=> <AccountPage updatePassword={updatePassword}/>} />
+      <Route path='/settings/accounts' render={()=> <AccountPage updatePassword={updatePassword} providerId={providerId}/>} />
     </Switch>
    
     </Grid.Column>
@@ -43,4 +51,4 @@ const SettingDashBoard = ({updatePassword}) => {
   )
 }
 
-export default connect(null, actions)(SettingDashBoard)
+export default connect(mapState, actions)(SettingDashBoard)

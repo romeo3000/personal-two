@@ -20,7 +20,7 @@ export const login = creds => {
   };
 };
 
-export const registerUser = user => async (
+export const registerUser = (user) => async (
   dispatch,
   getState,
   { getFirebase, getFirestore }
@@ -36,7 +36,7 @@ export const registerUser = user => async (
     // will update the auth profile to
     await createdUser.updateProfile({
       displayName: user.displayName
-    });
+    })
     //create a new profile in firestore
     let newUser = {
       displayName: user.displayName,
@@ -52,7 +52,7 @@ export const registerUser = user => async (
   }
 };
 
-export const socialLogin = selectedProvider => async (
+export const socialLogin = (selectedProvider) => async (
   dispatch,
   getState,
   { getFirebase, getFirestore }

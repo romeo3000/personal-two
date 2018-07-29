@@ -17,14 +17,13 @@ loading: state.async.loading
 const actions = {
   deleteEvent,
   
-
 }
 
 class EventDashboard extends Component {
-  state = {
-    isOpen: false,
-    selectedEvent: null
-  };
+  // state = {
+  //   isOpen: false,
+  //   selectedEvent: null
+  // };
 
   //this.handleFormOPen=this.handleFormOPen.bind(this);
   //this.handleCancel=this.handleCancel.bind(this);
