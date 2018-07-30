@@ -8,7 +8,7 @@ import PeopleDashboardPage from "../../features/user/PeopleDashboardPage/PeopleD
 import EventForm from "../../features/event/EventForm/EventForm";
 import SettingsDashboard from "../../features/user/Settings/SettingDashBoard";
 import UserDetailedPage from "../../features/user/UserDetailedPage/UserDetailedPage";
-import HomePage from "../../features/Home/HomePage";
+import HomePage from "../../features/home/HomePage";
 import TestComponent from "../../features/testarea/TestComponent";
 import ModalManager from '../../features/modals/ModalManager'
 
