@@ -5,7 +5,7 @@ import { asyncActionError, asyncActionStart, asyncActionFinish } from '../async/
 
 
 export const updateProfile =(user) =>
-async (dispatchEvent, getState, {getFirebase}) =>{
+async (dispatch, getState, {getFirebase}) =>{
    const firebase = getFirebase(); 
    //replacing user with updatedUser using spread operater to get a loaddash emit for free !
    const {isLoaded, isEmpty, ...updatedUser} = user;

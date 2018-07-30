@@ -11,7 +11,7 @@ const EventDetailedChat = () => {
             color="teal"
             style={{ border: 'none' }}
           >
-            <Header>Chat about this event</Header>
+            <Header>Leave Comment about this event</Header>
           </Segment>
     
           <Segment attached>
