@@ -15,10 +15,10 @@ const SocialLogin = ({socialLogin}) => {
             Login with Google
           </Button>
          <br/>
-          <Button onClick={() => socialLogin('twitter')}type="button" fluid color="twitter">
+           <Button onClick={() => socialLogin('twitter')}type="button" fluid color="twitter">
             <Icon name="twitter" />
             Login with Twitter
-          </Button>
+          </Button> 
         </div>
   )
 }

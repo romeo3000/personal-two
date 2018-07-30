@@ -7,7 +7,7 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 import SignedOutMenu from "../Menus/SignedOutMenu";
 import SignedInMenu from "../Menus/SignedInMenu";
 import { openModal } from "../../modals/modalActions";
-import {  } from "../../auth/authActions";
+
 
 const actions = {
   openModal,
