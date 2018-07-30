@@ -8,7 +8,7 @@ import firebase from '../config/firebase'
 
 
 const rrfConfig = {
- userProfile : 'user',
+ userProfile : 'users',
  attachAuthIsReady: true,
  userFirestoreForProfile: true,
  //this allow the new profiles to be populated with the store and will allow me to ..blah blah! 
