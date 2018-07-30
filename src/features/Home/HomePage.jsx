@@ -4,7 +4,7 @@ import logo from '../../Logo/logo.png'
 
 
 
-const Home = ({history}) => {
+const HomePage = ({history}) => {
   return (
 <div>
       <div className="ui inverted vertical masthead center aligned segment">
@@ -31,4 +31,4 @@ const Home = ({history}) => {
   )
 }
 
-export default Home
+export default HomePage;
